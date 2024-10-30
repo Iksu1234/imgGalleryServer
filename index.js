@@ -3,13 +3,15 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const router = require("./routes/router.js");
 
+const url = "http://localhost:3000";
+
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 const corsOptions = {
-  origin: "https://react-mk-front.azurewebsites.net",
+  origin: url,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   optionsSuccessStatus: 200,
 };
