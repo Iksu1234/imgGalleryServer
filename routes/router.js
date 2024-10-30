@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const router = express.Router();
 
-const allowedOrigin = "http://localhost:3000";
+const allowedOrigin = "https://frontend-p62t.onrender.com";
 
 // Middleware to check the origin of incoming requests
 const checkOrigin = (req, res, next) => {

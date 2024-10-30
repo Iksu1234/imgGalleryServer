@@ -3,7 +3,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const router = require("./routes/router.js");
 
-const url = "http://localhost:3000";
+const url = "https://frontend-p62t.onrender.com";
 
 const app = express();
 
