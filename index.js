@@ -2,8 +2,9 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const router = require("./routes/router.js");
+require("dotenv").config();
 
-const url = "https://frontend-p62t.onrender.com";
+const url = process.env.URL;
 
 const app = express();
 

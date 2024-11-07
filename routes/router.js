@@ -2,17 +2,16 @@ const express = require("express");
 const fs = require("fs");
 const path = require("path");
 const router = express.Router();
+require("dotenv").config();
 
-const allowedOrigin = "https://frontend-p62t.onrender.com";
+const allowedOrigin = process.env.URL;
 
 // Middleware to check the origin of incoming requests
 const checkOrigin = (req, res, next) => {
   const origin = req.get("Origin");
   if (origin === allowedOrigin) {
-    console.log("Origin allowed:", origin);
     next();
   } else {
-    console.log("Origin not allowed:", origin);
     res.status(403).send("Forbidden: Origin not allowed");
   }
 };
@@ -20,20 +19,6 @@ const checkOrigin = (req, res, next) => {
 // Apply the origin check middleware to all routes
 router.use(checkOrigin);
 
-// GET images from images.json
-router.get("/images", (req, res) => {
-  console.log("GET /images");
-  const filePath = path.join(__dirname, "../images.json");
-  fs.readFile(filePath, "utf8", (err, data) => {
-    if (err) {
-      console.error("Error reading images.json:", err);
-      res.status(500).send("Internal Server Error");
-      return;
-    }
-    const images = JSON.parse(data);
-    res.json(images);
-  });
-});
 // GET ratings from rating.json
 router.get("/ratings", (req, res) => {
   const filePath = path.join(__dirname, "../rating.json");
@@ -72,20 +57,6 @@ router.patch("/ratings", (req, res) => {
       }
       res.status(200).send("Rating added successfully");
     });
-  });
-});
-// POST new images to images.json
-router.put("/images", (req, res) => {
-  const filePath = path.join(__dirname, "../images.json");
-  const newImages = req.body;
-
-  fs.writeFile(filePath, JSON.stringify(newImages), "utf8", (err) => {
-    if (err) {
-      console.error("Error writing file", err);
-      res.status(500).send("Internal Server Error");
-      return;
-    }
-    res.status(200).send("New image file created");
   });
 });
 // DELETE ratings from rating.json
