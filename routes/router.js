@@ -17,7 +17,7 @@ const checkOrigin = (req, res, next) => {
 };
 
 // Apply the origin check middleware to all routes
-router.use(checkOrigin);
+//router.use(checkOrigin);
 
 // GET ratings from rating.json
 router.get("/ratings", (req, res) => {
@@ -32,6 +32,7 @@ router.get("/ratings", (req, res) => {
     res.json(ratings);
   });
 });
+
 // modify ratings to rating.json
 router.patch("/ratings", (req, res) => {
   const filePath = path.join(__dirname, "../rating.json");
@@ -59,6 +60,7 @@ router.patch("/ratings", (req, res) => {
     });
   });
 });
+
 // DELETE ratings from rating.json
 router.delete("/ratings", (req, res) => {
   const filePath = path.join(__dirname, "../rating.json");
@@ -69,6 +71,21 @@ router.delete("/ratings", (req, res) => {
       return;
     }
     res.status(200).send("Deleted successfully");
+  });
+});
+
+// GET images from images.json
+router.get("/images", (req, res) => {
+  console.log("GET /images");
+  const filePath = path.join(__dirname, "../assets/images.json");
+  fs.readFile(filePath, "utf8", (err, data) => {
+    if (err) {
+      console.error("Error reading images.json:", err);
+      res.status(500).send("Internal Server Error");
+      return;
+    }
+    const images = JSON.parse(data);
+    res.json(images);
   });
 });
 
