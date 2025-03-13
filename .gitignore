@@ -7,10 +7,12 @@
 
 # testing
 /coverage
+/assets/users.js
 
 # production
 /build
 rating.json
+
 
 # misc
 .DS_Store
