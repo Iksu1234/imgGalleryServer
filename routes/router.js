@@ -2,7 +2,10 @@ const express = require("express");
 const fs = require("fs");
 const path = require("path");
 const router = express.Router();
-const checkUserPw = require("../services/userManagementService.js");
+const {
+  checkUserPw,
+  checkUserRole,
+} = require("../services/userManagementService.js");
 require("dotenv").config();
 
 const allowedOrigin = process.env.URL;
@@ -94,9 +97,17 @@ router.get("/images", (req, res) => {
 // POST check login password
 router.post("/login", async (req, res) => {
   const { user, password } = req.body;
-  const result = await checkUserPw(user, password);
+  const result = checkUserPw(user, password);
   if (result === true) {
-    res.status(200).send("Login successful");
+    if (checkUserRole(user) === true) {
+      console.log("Login admin: " + user);
+      res.status(200).send(true);
+      return;
+    } else {
+      console.log("Login user: " + user);
+      res.status(200).send(false);
+      return;
+    }
   } else {
     res.status(401).send("Unauthorized");
   }
