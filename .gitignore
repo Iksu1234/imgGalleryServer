@@ -12,6 +12,7 @@
 # production
 /build
 rating.json
+imagesSafe.json
 
 
 # misc
