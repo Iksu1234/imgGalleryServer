@@ -72,6 +72,7 @@ router.patch("/ratings", (req, res) => {
 router.patch("/images", (req, res) => {
   const filePath = path.join(__dirname, "../assets/images.json");
   const newImages = req.body;
+  console.log("newImages: ", newImages);
 
   fs.readFile(filePath, "utf8", (err, data) => {
     if (err) {
