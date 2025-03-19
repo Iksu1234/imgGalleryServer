@@ -8,11 +8,14 @@
 # testing
 /coverage
 /assets/users.js
+/assets/imagesSafe.json
+
 
 # production
 /build
-rating.json
-imagesSafe.json
+
+
+
 
 
 # misc
