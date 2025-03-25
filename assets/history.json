@@ -1,0 +1,62 @@
+{
+  "months": [
+    {
+      "january": {
+        "images": [
+          {
+            "desc": "Terrains",
+            "imageLinks": [
+              "https://i.imgur.com/4KhIPMn.jpeg",
+              "https://i.imgur.com/RnF5Xew.jpeg"
+            ],
+            "rating": "1.33"
+          },
+          {
+            "desc": "Models",
+            "imageLinks": [
+              "https://preview.redd.it/glaurio-ven-alten-iii-from-cursed-city-v0-0l54y1zrbj8b1.jpg?width=640&crop=smart&auto=webp&s=8869c097a903594be9c4d3464d7a09cf7d0102a3",
+              "https://i.imgur.com/ScZr67n.png"
+            ],
+            "rating": "2.33"
+          },
+          {
+            "desc": "Battle scenes",
+            "imageLinks": [
+              "https://i.imgur.com/f6BJigQ.jpeg",
+              "https://i.imgur.com/sOuFyd7.jpeg"
+            ],
+            "rating": "3.67"
+          }
+        ]
+      },
+      "february": {
+        "images": [
+          {
+            "desc": "Terrains",
+            "imageLinks": [
+              "https://i.imgur.com/4KhIPMn.jpeg",
+              "https://i.imgur.com/RnF5Xew.jpeg"
+            ],
+            "rating": "1.33"
+          },
+          {
+            "desc": "Models",
+            "imageLinks": [
+              "https://preview.redd.it/glaurio-ven-alten-iii-from-cursed-city-v0-0l54y1zrbj8b1.jpg?width=640&crop=smart&auto=webp&s=8869c097a903594be9c4d3464d7a09cf7d0102a3",
+              "https://i.imgur.com/ScZr67n.png"
+            ],
+            "rating": "2.33"
+          },
+          {
+            "desc": "Battle scenes",
+            "imageLinks": [
+              "https://i.imgur.com/f6BJigQ.jpeg",
+              "https://i.imgur.com/sOuFyd7.jpeg"
+            ],
+            "rating": "3.67"
+          }
+        ]
+      }
+    }
+  ]
+}

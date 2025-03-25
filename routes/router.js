@@ -6,6 +6,11 @@ const {
   checkUserPw,
   checkUserRole,
 } = require("../services/userManagementService.js");
+
+const {
+  calcRatingsMean,
+  combineArrays,
+} = require("../services/ratingService.js");
 const { join } = require("path/posix");
 const { Console } = require("console");
 require("dotenv").config();
@@ -28,7 +33,7 @@ const checkOrigin = (req, res, next) => {
 
 // GET ratings from rating.json
 router.get("/ratings", (req, res) => {
-  const filePath = path.join(__dirname, "../rating.json");
+  const filePath = path.join(__dirname, "../assets/rating.json");
   fs.readFile(filePath, "utf8", (err, data) => {
     if (err) {
       console.error("Error reading rating.json:", err);
@@ -36,13 +41,15 @@ router.get("/ratings", (req, res) => {
       return;
     }
     const ratings = JSON.parse(data);
-    res.json(ratings);
+    const ratingMeans = calcRatingsMean(ratings);
+    console.log("Rating means: ", ratingMeans);
+    res.json(ratingMeans);
   });
 });
 
 // PATCH ratings to rating.json
 router.patch("/ratings", (req, res) => {
-  const filePath = path.join(__dirname, "../rating.json");
+  const filePath = path.join(__dirname, "../assets/rating.json");
   const newRate = req.body;
 
   fs.readFile(filePath, "utf8", (err, data) => {
@@ -139,7 +146,7 @@ router.delete("/images", (req, res) => {
 
 // DELETE ratings from rating.json
 router.delete("/ratings", (req, res) => {
-  const filePath = path.join(__dirname, "../rating.json");
+  const filePath = path.join(__dirname, "../assets/rating.json");
   fs.writeFile(filePath, "[[], [], []]", "utf8", (err) => {
     if (err) {
       console.error("Error writing file", err);
@@ -165,6 +172,34 @@ router.get("/images", (req, res) => {
   });
 });
 
+// GET image and ratings combined
+router.get("/results", (req, res) => {
+  const imagePath = path.join(__dirname, "../assets/images.json");
+  const ratingPath = path.join(__dirname, "../assets/rating.json");
+
+  fs.readFile(imagePath, "utf8", (err, imageData) => {
+    if (err) {
+      console.error("Error reading images.json:", err);
+      res.status(500).send("Internal Server Error");
+      return;
+    }
+
+    fs.readFile(ratingPath, "utf8", (err, ratingData) => {
+      if (err) {
+        console.error("Error reading rating.json:", err);
+        res.status(500).send("Internal Server Error");
+        return;
+      }
+
+      const images = JSON.parse(imageData);
+      const ratings = JSON.parse(ratingData);
+      const combined = combineArrays(ratings, images);
+
+      res.json(combined);
+    });
+  });
+});
+
 // POST check login password
 router.post("/login", async (req, res) => {
   const { user, password } = req.body;
@@ -182,6 +217,20 @@ router.post("/login", async (req, res) => {
   } else {
     res.status(401).send("Unauthorized");
   }
+});
+
+// GET history from history.json
+router.get("/history", (req, res) => {
+  const filePath = path.join(__dirname, "../assets/history.json");
+  fs.readFile(filePath, "utf8", (err, data) => {
+    if (err) {
+      console.error("Error reading images.json:", err);
+      res.status(500).send("Internal Server Error");
+      return;
+    }
+    const history = JSON.parse(data);
+    res.json(history);
+  });
 });
 
 module.exports = router;
