@@ -9,15 +9,15 @@
               "https://i.imgur.com/4KhIPMn.jpeg",
               "https://i.imgur.com/RnF5Xew.jpeg"
             ],
-            "rating": "1.33"
+            "rating": ""
           },
           {
-            "desc": "Models",
+            "desc": "Glaurio Ven Alten III from Cursed City",
             "imageLinks": [
               "https://preview.redd.it/glaurio-ven-alten-iii-from-cursed-city-v0-0l54y1zrbj8b1.jpg?width=640&crop=smart&auto=webp&s=8869c097a903594be9c4d3464d7a09cf7d0102a3",
-              "https://i.imgur.com/ScZr67n.png"
+              "https://i.imgur.com/SWCXN9L.jpeg"
             ],
-            "rating": "2.33"
+            "rating": ""
           },
           {
             "desc": "Battle scenes",
@@ -25,30 +25,62 @@
               "https://i.imgur.com/f6BJigQ.jpeg",
               "https://i.imgur.com/sOuFyd7.jpeg"
             ],
-            "rating": "3.67"
+            "rating": ""
+          },
+          {
+            "desc": "Vespid",
+            "imageLinks": ["https://i.imgur.com/upW4x3P.png"],
+            "rating": ""
+          },
+          {
+            "desc": "Landraider",
+            "imageLinks": ["https://i.imgur.com/7c28RhH.png"],
+            "rating": ""
+          },
+          {
+            "desc": "Vampires",
+            "imageLinks": [
+              "https://i.imgur.com/8DWzjom.png",
+              "https://i.imgur.com/SKTwfpw.png"
+            ],
+            "rating": ""
           }
         ]
       },
       "February": {
         "images": [
           {
-            "desc": "Community",
+            "desc": "Manipulus",
             "imageLinks": [
-              "https://assets.warhammer-community.com/darktidedlc-mar25-art-by8l3olquf.jpg",
-              "https://assets.warhammer-community.com/darktidedlc-mar25-screen1-utm2f9ub9s.jpg",
-              "https://assets.warhammer-community.com/darktidedlc-mar25-screen2-nxistiqjww.jpg"
+              "https://i.imgur.com/7Iev9hf.jpeg",
+              "https://i.imgur.com/vaRNjLd.jpeg"
             ],
-            "rating": "2.33"
+            "rating": ""
           },
           {
-            "desc": "Marine",
+            "desc": "Moirax",
             "imageLinks": [
-              "https://assets.warhammer-community.com/warcom_postcontent1-wide-sk5ptzghxr.jpg",
-              "https://assets.warhammer-community.com/warcom_postcontent2-wide-tlqnktljfy.jpg",
-              "https://assets.warhammer-community.com/warcom_loop-0xrpph2evm.gif",
-              "https://assets.warhammer-community.com/warcom_postcontent3-wide-xkd891cqrf.jpg"
+              "https://i.imgur.com/TfzGOlQ.png",
+              "https://i.imgur.com/noOi6AH.jpeg"
             ],
-            "rating": "6.66"
+            "rating": ""
+          },
+          {
+            "desc": "Admek",
+            "imageLinks": [
+              "https://i.imgur.com/aTd2RAH.png",
+              "https://i.imgur.com/xW9jWBk.jpeg",
+              "https://i.imgur.com/wO1BwSn.jpeg"
+            ],
+            "rating": ""
+          },
+          {
+            "desc": "Kroot shaper",
+            "imageLinks": [
+              "https://i.imgur.com/uoPR3PU.png",
+              "https://i.imgur.com/whcWbGa.png"
+            ],
+            "rating": ""
           }
         ]
       }
