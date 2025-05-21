@@ -71,6 +71,7 @@ router.patch("/ratings", (req, res) => {
         return;
       }
       res.status(200).send("Rating added successfully");
+      console.log("Rating added successfully:" + newRate);
     });
   });
 });
