@@ -1,4 +1,4 @@
-const users = require("../assets/users.js");
+const users = require("..//users.js");
 
 // Cross reference user and password from users.js
 // Return true if user and password match

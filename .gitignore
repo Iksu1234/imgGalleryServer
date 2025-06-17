@@ -7,16 +7,12 @@
 
 # testing
 /coverage
-/assets/users.js
+/users.js
 /assets/imagesSafe.json
 
 
 # production
 /build
-
-
-
-
 
 # misc
 .DS_Store
